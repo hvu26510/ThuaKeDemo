@@ -38,7 +38,6 @@ namespace Demo
             Console.WriteLine("email:" + this.email);
             Console.WriteLine("Hoc luc:" + this.HocLuc());
         }
-
         public void Nhap()
         {
             Console.Write("Ten:" );

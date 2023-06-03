@@ -10,13 +10,16 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            //NhanVien nv1 = new NhanVien("Nguyen van A", "Ha Noi", "anv@gmail.com", "0123456789", "Phu Ho - Cap Cao");
+           
+            HinhVuong hv = new HinhVuong();
 
-            //nv1.Show();
+            hv.setCanh(3);
+            hv.TinhDienTich();
+            hv.TinhChuVi();
 
-            KeToan kt1 = new KeToan("Nguyen van A", "Ha Noi", "anv@gmail.com", "0123456789", "Phu Ho - Cap Cao", 15000000);
+            Console.WriteLine("Dien tich: "+ hv.getDT());
+            Console.WriteLine("Chu vi : " + hv.getCV());
 
-            kt1.Show();
 
             Console.ReadLine();
         }

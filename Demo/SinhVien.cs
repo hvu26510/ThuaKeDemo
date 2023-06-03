@@ -8,6 +8,7 @@ namespace Demo
 {
     internal class SinhVien
     {
+        private int maSV;
         private string name;
         private double diem;
         private string email;

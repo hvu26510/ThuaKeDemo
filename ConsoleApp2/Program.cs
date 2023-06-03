@@ -10,16 +10,13 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-           
-            HinhVuong hv = new HinhVuong();
 
-            hv.setCanh(3);
-            hv.TinhDienTich();
-            hv.TinhChuVi();
+            SinhVienIT svIT = new SinhVienIT("Nguyen Van A", "IT", 8 ,9, 11);
 
-            Console.WriteLine("Dien tich: "+ hv.getDT());
-            Console.WriteLine("Chu vi : " + hv.getCV());
+            svIT.xuat();
 
+            SinhVienBiz svBiz = new SinhVienBiz("Nguyen Van A", "Biz", 8, 9);
+            svBiz.xuat();
 
             Console.ReadLine();
         }

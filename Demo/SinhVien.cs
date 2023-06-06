@@ -13,6 +13,27 @@ namespace Demo
         private double diem;
         private string email;
 
+        public SinhVien(int maSV, string name, string email, double diem)
+        {
+            this.maSV = maSV;
+            this.name = name;
+            this.diem = diem;
+            this.email = email;
+        }
+
+        public SinhVien()
+        {
+        }
+
+        public int getMASV()
+        {
+            return this.maSV;
+        }
+
+        public double getDiem()
+        {
+            return this.diem;
+        }
         public string HocLuc()
         {
             if(this.diem < 5)

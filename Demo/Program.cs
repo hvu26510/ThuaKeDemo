@@ -11,39 +11,62 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            ArrayList listSV = new ArrayList();
+            
+            ArrayList listSV = new ArrayList(); 
+            addDataDemo(ref listSV);
 
-            // tạo đối tượng sv1 kiểu SinhVien
-            SinhVien sv1 = new SinhVien();
-            sv1.Nhap();
+            var listByDiem = listSV.Cast<SinhVien>().Where(sv => sv.getDiem() >= 5 && sv.getDiem() <= 7);
 
-            //thêm đối tượng vào listSV
-            listSV.Add(sv1);
-
-            // tạo đối tượng sv2 kiểu SinhVien
-            SinhVien sv2 = new SinhVien();
-            sv2.Nhap();
-
-            //thêm đối tượng vào listSV
-            listSV.Add(sv2);
-
-
-
-            Console.Clear();
-
-            //xoa sv1 khoi listSV
-
-            listSV.Remove(sv1);
-
-            foreach (SinhVien i in listSV)
+            foreach(SinhVien i in listByDiem)
             {
                 i.Show();
             }
+          
 
             Console.ReadLine();
 
+        }
+        static void addDataDemo(ref ArrayList list)
+        {
+            SinhVien sv1 = new SinhVien(1, "Nguyen Van A", "anv@email.com", 10);
+            SinhVien sv2 = new SinhVien(2, "Nguyen Van hai", "hainv@email.com", 5);
+            SinhVien sv3 = new SinhVien(3, "Nguyen Van ba", "banv@email.com", 7);
+            SinhVien sv4 = new SinhVien(4, "Nguyen Van bon", "bonnv@email.com", 8);
+            SinhVien sv5 = new SinhVien(5, "Nguyen Van nam", "namnv@email.com", 1);
+            SinhVien sv6 = new SinhVien(6, "Nguyen Van sau", "saunv@email.com", 0);
 
+            list.Add(sv1);
+            list.Add(sv2);
+            list.Add(sv3);
+            list.Add(sv4);
+            list.Add(sv5);
+            list.Add(sv6);
 
+        }
+
+        static SinhVien FindByMaSV(ArrayList list, int masv)
+        {
+            foreach (SinhVien sv in list)
+            {
+                if(sv.getMASV() == masv)
+                {
+                    return sv;
+                }
+            }
+            return null;
+        }
+
+        static ArrayList FindByDiem(ArrayList list, double min, double max)
+        {
+            ArrayList listOut = new ArrayList();
+            foreach (SinhVien sv in list)
+            {
+                if (sv.getDiem() >= min && sv.getDiem()<= max)
+                {
+                    listOut.Add(sv);
+                }
+            }
+            return listOut;
         }
     }
 }

@@ -11,12 +11,11 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
 
-            SinhVienIT svIT = new SinhVienIT("Nguyen Van A", "IT", 8 ,9, 11);
+            //Bird chimSeDiNang = new Bird();
+            //chimSeDiNang.Eat();
 
-            svIT.xuat();
-
-            SinhVienBiz svBiz = new SinhVienBiz("Nguyen Van A", "Biz", 8, 9);
-            svBiz.xuat();
+            Cat meo = new Cat();
+            meo.Eat();
 
             Console.ReadLine();
         }

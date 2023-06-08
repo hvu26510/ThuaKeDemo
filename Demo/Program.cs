@@ -15,13 +15,21 @@ namespace Demo
             ArrayList listSV = new ArrayList(); 
             addDataDemo(ref listSV);
 
-            var listByDiem = listSV.Cast<SinhVien>().Where(sv => sv.getDiem() >= 5 && sv.getDiem() <= 7);
+            //var listByDiem = listSV.Cast<SinhVien>().Where(sv => sv.getDiem() >= 5 && sv.getDiem() <= 7);
 
-            foreach(SinhVien i in listByDiem)
-            {
-                i.Show();
-            }
-          
+            //foreach(SinhVien i in listByDiem)
+            //{
+            //    i.Show();
+            //}
+
+
+            List<SinhVien> list = Sort(listSV);
+
+            Print5Highest(list);
+            //foreach(SinhVien sv in list)
+            //{
+            //    sv.Show();
+            //}
 
             Console.ReadLine();
 
@@ -68,5 +76,32 @@ namespace Demo
             }
             return listOut;
         }
+
+        //sap xep tang dan, tra ve List<SinhVien> co diem tang dan
+        static List<SinhVien> Sort(ArrayList list)
+        {
+            List<SinhVien> listOutPut = list.Cast<SinhVien>().ToList();
+            listOutPut.Sort((sv1, sv2) => sv2.getDiem().CompareTo(sv1.getDiem()));
+            return listOutPut;
+
+        }
+    
+        static void Print5Highest(List<SinhVien> list)
+        {
+            for(int i =0; i<list.Count(); i++)
+            {
+                if (i < 5)
+                {
+                    list[i].Show();
+                }
+                else
+                {
+                    break;
+                }
+               
+            }
+        }
+
+    
     }
 }

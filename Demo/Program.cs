@@ -23,9 +23,8 @@ namespace Demo
             //}
 
 
-            List<SinhVien> list = Sort(listSV);
 
-            Print5Highest(list);
+            Print5Highest(listSV);
             //foreach(SinhVien sv in list)
             //{
             //    sv.Show();
@@ -86,9 +85,11 @@ namespace Demo
 
         }
     
-        static void Print5Highest(List<SinhVien> list)
+        static void Print5Highest(ArrayList listSV)
         {
-            for(int i =0; i<list.Count(); i++)
+            List<SinhVien> list = listSV.Cast<SinhVien>().ToList();
+            list.Sort((sv1, sv2) => sv2.getDiem().CompareTo(sv1.getDiem()));
+            for (int i =0; i<list.Count(); i++)
             {
                 if (i < 5)
                 {
